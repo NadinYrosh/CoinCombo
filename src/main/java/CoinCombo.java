@@ -1,18 +1,24 @@
 import static spark.Spark.*;
+import java.util.HashMap;
 
 public class CoinCombo {
-  public Integer comboOfCoins(Integer number) {
-    Integer quarter = 0;
-    Integer dime = 0;
-    Integer nickel = 0;
-    Integer penny = 0;
+  public HashMap comboOfCoins(Integer number) {
+    HashMap<String, Integer> coins = new HashMap<String, Integer>();
+    coins.put("quarters", 0);
+    coins.put("dimes", 0);
+    // coins.put("quarters", 0);
+    // coins.put("quarters", 0);
 
-    while (number >= 25) {
+
+    while (number >= 10) {
       if (number >=25){
         number -= 25;
-        quarter++;
+        coins.put("quarters", coins.get("quarters") + 1);
+      } else if (number >= 10) {
+        number -= 10;
+        coins.put("dimes", coins.get("dimes") + 1);
       }
     }
-    return quarter;
+    return coins;
   }
 }
