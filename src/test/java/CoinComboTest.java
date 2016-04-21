@@ -17,4 +17,10 @@ public class CoinComboTest {
     Integer expected = 2;
     assertEquals(expected, testCoinCombo.comboOfCoins(21).get("dimes"));
   }
+  @Test
+  public void checkCoinCombo_nickel_1(){
+    CoinCombo testCoinCombo = new CoinCombo();
+    Integer expected = 1;
+    assertEquals(expected, testCoinCombo.comboOfCoins(15).get("nikels"));
+  }
 }
